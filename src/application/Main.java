@@ -24,6 +24,13 @@ public class Main {
 		for(Seller s : list) {
 			System.out.println(s);
 		}
+		
+		System.out.println();
+		System.out.println("Execute method findAll: ");
+		List<Seller> sellers = sellerDAO.findAll();
+		for(Seller s : sellers) {
+			System.out.println(s);
+		}
 
 	}
 
