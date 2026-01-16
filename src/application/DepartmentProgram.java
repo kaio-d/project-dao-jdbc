@@ -22,6 +22,11 @@ public class DepartmentProgram {
 		for(Department d : departments) {
 			System.out.println(d);
 		}
+		
+		System.out.println();
+		Department newDepartment = new Department(null, "Marketing");
+		departmentDAO.insert(newDepartment);
+		System.out.println("Inser a new Department! ID = " + newDepartment.getId());
 	}
 
 }
