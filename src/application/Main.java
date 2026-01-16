@@ -49,7 +49,13 @@ public class Main {
 		} catch (ParseException e) {
 		    e.printStackTrace();
 		}
-
+		
+		System.out.println();
+		System.out.println("Execute method insert: ");
+		seller = sellerDAO.findByID(9);
+		seller.setName("Kaio Mancini");
+		sellerDAO.update(seller);
+		System.out.println("Update Completed!");
 	}
 
 }
