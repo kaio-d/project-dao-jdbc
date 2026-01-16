@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DAOFactory;
 import model.dao.SellerDAO;
@@ -14,6 +15,7 @@ import model.entities.Seller;
 public class Main {
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		SellerDAO sellerDAO = DAOFactory.createSellerDao();
 		
 		System.out.println("Execute method findById: ");
@@ -52,10 +54,18 @@ public class Main {
 		
 		System.out.println();
 		System.out.println("Execute method insert: ");
-		seller = sellerDAO.findByID(9);
+		seller = sellerDAO.findByID(1);
 		seller.setName("Kaio Mancini");
 		sellerDAO.update(seller);
 		System.out.println("Update Completed!");
+		
+		System.out.println();
+		System.out.println("Execute method delete: ");
+		System.out.print("Enter id for delete: ");
+		int id = sc.nextInt();
+		sellerDAO.deleteByID(id);
+		System.out.println("Delete completed!");
+		sc.close();
 	}
 
 }
