@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.DAOFactory;
@@ -24,9 +23,17 @@ public class DepartmentProgram {
 		}
 		
 		System.out.println();
+		System.out.println("Execute method insert: ");
 		Department newDepartment = new Department(null, "Marketing");
 		departmentDAO.insert(newDepartment);
 		System.out.println("Inser a new Department! ID = " + newDepartment.getId());
+		
+		System.out.println();
+		System.out.println("Execute a method update: ");
+		Department department = departmentDAO.findByID(5);
+		department.setName("RH");
+		departmentDAO.update(department);
+		System.out.println("Update Completed!");
 	}
 
 }
