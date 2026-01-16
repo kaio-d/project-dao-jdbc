@@ -34,6 +34,11 @@ public class DepartmentProgram {
 		department.setName("RH");
 		departmentDAO.update(department);
 		System.out.println("Update Completed!");
+		
+		System.out.println();
+		System.out.println("Execute a method delete: ");
+		departmentDAO.deleteByID(5);
+		System.out.println("Delete completed!");
 	}
 
 }
